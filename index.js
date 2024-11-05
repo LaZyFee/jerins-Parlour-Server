@@ -26,7 +26,7 @@ const app = express();
 dotenv.config();
 
 app.use(cors({
-    origin: ["http://localhost:5173", "https://jerins-parlour-webappx.netlify.app/"],
+    origin: ["http://localhost:5173", "https://jerins-parlour-webappx.netlify.app"],
     credentials: true
 }));
 app.use(express.json());
