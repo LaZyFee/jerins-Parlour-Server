@@ -1,3 +1,4 @@
+dotenv.config();
 import express from "express";
 import {
     registerUser,
@@ -24,8 +25,8 @@ router.put("/make-admin", verifyToken, verifyAdmin, makeAdmin);
 // Google OAuth
 router.get("/auth/google", passport.authenticate("google", { scope: ["profile", "email"] }));
 router.get("/auth/google/callback",
-    passport.authenticate("google", { failureRedirect: "http://localhost:5173/login" }),
-    googleAuth // Final callback
+    passport.authenticate("google", { failureRedirect: `${process.env.FRONTEND_URL}/login` }),
+    googleAuth
 );
 
 export default router;
