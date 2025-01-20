@@ -3,7 +3,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import noImageFound from "../../../assets/images/user.jpg";
+import noImageFound from "/assets/images/user.jpg";
 
 function Reviews() {
   const [reviews, setReviews] = useState([]);

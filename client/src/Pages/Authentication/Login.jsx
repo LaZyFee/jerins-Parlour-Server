@@ -4,8 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../Store/AuthStore";
 import PrimaryButton from "../../Components/PrimaryButton";
 import { toast } from "react-hot-toast";
-import logo from "../../assets/logo.png";
-import googleLogo from "../../assets/icons/Group 573.png";
+import logo from "/assets/images/logo.png";
+import googleLogo from "/assets/icons/Group 573.png";
 
 function Login() {
   const {

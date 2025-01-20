@@ -1,7 +1,7 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import NavLogo from "../../../src/assets/logo.png";
+import NavLogo from "/assets/images/logo.png";
 import { useAuth } from "../../Store/AuthStore";
-import noImageFound from "../../assets/images/user.jpg";
+import noImageFound from "/assets/images/user.jpg";
 import { toast } from "react-hot-toast";
 
 function Navbar() {
