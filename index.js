@@ -14,4 +14,13 @@ connectDB().then(() => {
     console.error('Failed to connect to MongoDB', err);
     process.exit(1);
 });
+console.log("Server cold start at", new Date().toISOString());
+app.use((req, res, next) => {
+    console.time(`${req.method} ${req.url}`);
+    res.on('finish', () => {
+        console.timeEnd(`${req.method} ${req.url}`);
+    });
+    next();
+});
+
 export default app
