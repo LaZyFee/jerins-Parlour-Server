@@ -16,6 +16,7 @@ export default defineConfig(({ mode }) => {
       https: false,
     },
     build: {
+      outDir: "dist", // Default directory for build output
       sourcemap: env.NODE_ENV !== "production",
       chunkSizeWarningLimit: 1000, // Increase chunk size limit to 1MB
       rollupOptions: {
@@ -27,6 +28,7 @@ export default defineConfig(({ mode }) => {
         },
       },
     },
+
     plugins: [react()],
   };
 });
