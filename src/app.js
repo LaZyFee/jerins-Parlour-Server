@@ -59,4 +59,8 @@ app.get('*', (req, res) => {
     res.sendFile(path.resolve(clientPath, 'index.html'));
 });
 
+console.log("Uploads Path:", path.join(__dirname, 'uploads'));
+console.log("Client Path:", clientPath);
+
+
 export default app;
