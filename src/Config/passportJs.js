@@ -1,6 +1,14 @@
 import passport from "passport";
 import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 import { UserModel } from "../Models/AuthModel.js";
+import { configDotenv } from "dotenv";
+
+configDotenv();
+
+if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
+    console.error("Google OAuth configuration is missing!");
+    throw new Error("Google OAuth configuration is missing.");
+}
 
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,

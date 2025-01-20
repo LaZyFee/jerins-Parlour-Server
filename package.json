@@ -1,20 +1,20 @@
 {
   "name": "server-side",
   "version": "1.0.0",
-  "description": "",
+  "description": "Jerins Parlour Backend",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "engines": {
+    "node": ">=20.x"
+  },
   "type": "module",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
-    "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
@@ -30,5 +30,8 @@
     "paypal-rest-sdk": "^1.8.1",
     "raw-body": "^3.0.0",
     "stripe": "^17.2.1"
-  }
+  },
+  "keywords": [],
+  "author": "",
+  "private": true
 }
