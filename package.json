@@ -8,9 +8,6 @@
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "engines": {
-    "node": ">=20.x"
-  },
   "type": "module",
   "license": "ISC",
   "dependencies": {
@@ -32,6 +29,5 @@
     "stripe": "^17.2.1"
   },
   "keywords": [],
-  "author": "",
-  "private": true
+  "author": ""
 }

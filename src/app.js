@@ -40,7 +40,7 @@ app.use(passport.session());
 
 
 // Serve static files (images)
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use('/uploads', express.static(path.join(__dirname, 'src', 'uploads')));
 
 app.use("/", authRoutes);
 app.use("/", serviceRoutes);
