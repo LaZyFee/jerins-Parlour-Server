@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
-import HeroImage1 from "../../../assets/images/hero1.jpg";
 import PrimaryButton from "../../../Components/PrimaryButton";
 
 function HeroSection() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 lg:p-12 shadow-xl lg:flex lg:flex-row-reverse ">
-      <img src={HeroImage1} className="lg:w-1/2" alt="Hero" />
+      <img
+        src="/assets/images/HeroImage1.png"
+        className="lg:w-1/2"
+        alt="Hero"
+      />
       <div className="w-full flex flex-col justify-center items-start p-6">
         <h1 className="text-5xl font-bold">
           Beauty Salon <br />

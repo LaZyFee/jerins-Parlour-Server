@@ -1,11 +1,9 @@
-import HeroImage from "../../../assets/images/engin-akyurt-g-m8edc4x6q-unsplash_1.jpg";
-
 function HeroSection2() {
   return (
     <div className="flex flex-col lg:flex-row p-8 lg:gap-12 shadow-xl">
       <div className="flex-1">
         <img
-          src={HeroImage}
+          src="/assets/images/HeroImage2.png"
           alt="Professional Treatment"
           className="rounded-lg shadow-lg w-full h-auto"
         />
