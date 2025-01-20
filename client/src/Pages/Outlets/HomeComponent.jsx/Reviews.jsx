@@ -54,9 +54,7 @@ function Reviews() {
                       review.profilepic?.startsWith("https")
                         ? review.profilepic // Absolute URL
                         : review.profilepic
-                        ? `${import.meta.env.VITE_BACKEND_URL}/${
-                            review.profilepic
-                          }` // Relative path
+                        ? `${import.meta.env.VITE_API_URL}/${review.profilepic}` // Relative path
                         : noImageFound // Fallback image
                     }
                     alt={review.username || "User profile"} // Use username or fallback alt text

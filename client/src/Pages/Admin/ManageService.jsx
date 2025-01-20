@@ -87,7 +87,7 @@ function ManageService() {
                 <img
                   src={
                     service.image
-                      ? `${import.meta.env.VITE_BACKEND_URL}/${service.image}`
+                      ? `${import.meta.env.VITE_API_URL}/${service.image}`
                       : placeholderImage
                   }
                   alt={service.name || "Service Image"}

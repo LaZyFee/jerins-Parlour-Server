@@ -40,22 +40,21 @@ app.use(passport.session());
 
 
 // Serve static files (images)
-app.use('/uploads', express.static(path.join(__dirname, 'src', 'uploads')));
+app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
 
-app.use("/", authRoutes);
-app.use("/", serviceRoutes);
-app.use("/", bookingRoutes);
-app.use('/payment', paymentRoutes);
-app.use("/", orderRoutes);
-
-
-
-const clientPath = path.join(process.cwd(), 'client', 'dist');
+const clientPath = path.join(process.cwd(), "client", "dist");
 app.use(express.static(clientPath));
 
+app.use("/api", authRoutes);
+app.use("/api", serviceRoutes);
+app.use("/api", bookingRoutes);
+app.use('/api/payment', paymentRoutes);
+app.use("/api", orderRoutes);
+
+
 // Catch-all route for React
-app.get('*', (req, res) => {
-    res.sendFile(path.resolve(clientPath, 'index.html'));
+app.get("*", (req, res) => {
+    res.sendFile(path.join(clientPath, "index.html"));
 });
 
 console.log("Uploads Path:", path.join(__dirname, 'uploads'));

@@ -3,7 +3,8 @@ import axios from "axios";
 import CheckAdmin from "../Store/CheckAdmin";
 
 axios.defaults.withCredentials = true;
-axios.defaults.baseURL = "/api";
+axios.defaults.baseURL =
+  process.env.NODE_ENV === "production" ? "/api" : "http://localhost:5000/api";
 export const useAuth = create((set) => ({
   user: JSON.parse(localStorage.getItem("user")) || null,
   isAuthenticated: !!localStorage.getItem("user"),
