@@ -8,26 +8,27 @@ export default defineConfig(({ mode }) => {
     server: {
       proxy: {
         "/api/": {
-          target: env.VITE_API_BASE_URL || "http://localhost:5000",
+          target: env.VITE_API_URL || "http://localhost:5000",
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/api/, ""),
         },
       },
-      https: false,
     },
+
     build: {
-      outDir: "dist", // Default directory for build output
+      outDir: "dist", // Ensure this matches the expected output directory
       sourcemap: env.NODE_ENV !== "production",
-      chunkSizeWarningLimit: 1000, // Increase chunk size limit to 1MB
+      chunkSizeWarningLimit: 1000,
       rollupOptions: {
         output: {
           manualChunks: {
-            react: ["react", "react-dom", "react-router-dom"], // Split React libraries
-            daisyui: ["daisyui"], // Split DaisyUI into its own chunk
+            react: ["react", "react-dom", "react-router-dom"],
+            daisyui: ["daisyui"],
           },
         },
       },
     },
+
 
     plugins: [react()],
   };

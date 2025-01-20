@@ -50,7 +50,6 @@ app.use("/", orderRoutes);
 
 
 
-// Static files for frontend build
 const clientPath = path.join(process.cwd(), 'client', 'dist');
 app.use(express.static(clientPath));
 
