@@ -6,6 +6,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd());
 
   return {
+    base: "/client/", // Set the base path for assets
     server: {
       proxy: {
         "/api": {
