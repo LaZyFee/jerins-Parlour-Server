@@ -40,7 +40,7 @@ app.use(passport.session());
 
 
 // Serve static files (images)
-app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 const clientPath = path.join(process.cwd(), "client", "dist");
 app.use(express.static(clientPath));

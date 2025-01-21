@@ -32,10 +32,10 @@ function Profile() {
             <img
               src={
                 user.profilePic?.startsWith("https")
-                  ? user.profilePic // Absolute URL
+                  ? user.profilePic
                   : user.profilePic
-                  ? `/${user.profilePic}` // Relative path
-                  : noImageFound // Fallback image
+                  ? `${apiUrl}/${user.profilePic}`
+                  : noImageFound
               }
               className="rounded-xl"
               alt={user.name || "user profile"}

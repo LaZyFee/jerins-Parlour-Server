@@ -4,6 +4,7 @@ import "swiper/css/pagination";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import noImageFound from "/assets/images/user.jpg";
+import { apiUrl } from "../../../utils/config";
 
 function Reviews() {
   const [reviews, setReviews] = useState([]);
@@ -52,15 +53,15 @@ function Reviews() {
                   <img
                     src={
                       review.profilepic?.startsWith("https")
-                        ? review.profilepic // Absolute URL
+                        ? review.profilepic
                         : review.profilepic
-                        ? `${import.meta.env.VITE_API_URL}/${review.profilepic}` // Relative path
-                        : noImageFound // Fallback image
+                        ? `${apiUrl}/${review.profilepic}`
+                        : noImageFound
                     }
-                    alt={review.username || "User profile"} // Use username or fallback alt text
+                    alt={review.username || "User profile"}
                     className="rounded-full w-16 h-16 mr-4"
                   />
-
+                  ;
                   <div>
                     <h3 className="font-bold">{review.username}</h3>
                   </div>

@@ -25,6 +25,10 @@
     {
       "src": "/(.*)",
       "dest": "/client/dist/index.html"
+    },
+    {
+      "src": "/uploads/(.*)",
+      "dest": "/uploads/$1"
     }
   ]
 }

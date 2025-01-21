@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import PrimaryButton from "../../../Components/PrimaryButton";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Skeleton from "../../../Components/Skeleton";
+import { apiUrl } from "../../../utils/config";
 
 function ServiceSection() {
   const [services, setServices] = useState([]);
@@ -35,9 +37,9 @@ function ServiceSection() {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mx-auto lg:mx-10">
         {loading ? (
-          <p>Loading services...</p>
+          <Skeleton /> // Render Skeleton when loading
         ) : services.length === 0 ? (
-          <p>No services available at the moment.</p>
+          <p>No services available at the moment.</p> // Render message if no services are available
         ) : (
           Array.isArray(limitedServices) &&
           limitedServices.map((service) => (
@@ -50,7 +52,7 @@ function ServiceSection() {
                   <img
                     src={
                       service.image
-                        ? `${import.meta.env.VITE_API_URL}/${service.image}`
+                        ? `${apiUrl}/${service.image}`
                         : placeholderImage
                     }
                     alt={service.name}

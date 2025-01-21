@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Skeleton from "../../Components/Skeleton";
+import { apiUrl } from "../../utils/config";
 
 function Services() {
   const [services, setServices] = useState([]);
@@ -42,10 +43,10 @@ function Services() {
                 <img
                   src={
                     service.image
-                      ? `${import.meta.env.VITE_API_URL}/${service.image}`
+                      ? `${apiUrl}/${service.image}`
                       : placeholderImage
                   }
-                  alt={service.name || "Service Image"}
+                  alt={service.name}
                   className="w-full"
                 />
               </figure>
