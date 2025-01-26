@@ -25,7 +25,9 @@ const __dirname = path.dirname(__filename);
 const app = express();
 dotenv.config();
 
-app.use(cors());
+app.use(cors({
+    origin: ["http://localhost:5173", "http://localhost:5174"]
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
